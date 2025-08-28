@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tea - Gabriela Miranda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="trabalho-page">
+
+  <a href="portfolio.html" class="close-btn">✖</a>
+
+  <header class="portfolio-header">
+    <a href="index.html" class="site-title">Gabriela Miranda</a>
+    <nav class="menu">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="trabalho-main">
+    <div class="trabalho-container">
+      <div class="trabalho-video">
+        <video controls poster="media/t4.png">
+          <source src="media/v4.mp4" type="video/mp4">
+          O seu navegador não suporta vídeos HTML5.
+        </video>
+      </div>
+
+      <div class="trabalho-descricao">
+        <h2>The Tea</h2>
+        <p><strong>2022</strong></p>
+        <p>
+          A teacup is filled and, 
+          unexpectedly, a flower blooms inside. The scene is observed by a frog who, upon placing his hands on the 
+          table, extends his tongue to pull out and eat the flower. A simple gesture is transformed into an 
+          exploration of the unusual and the playful.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener("load", () => {
+      const container = document.querySelector(".trabalho-container");
+      container.classList.add("show");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audiovisual Synchronization - Gabriela Miranda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="trabalho-page">
+
+  <a href="portfolio.html" class="close-btn">✖</a>
+
+  <header class="portfolio-header">
+    <a href="index.html" class="site-title">Gabriela Miranda</a>
+    <nav class="menu">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="trabalho-main">
+    <div class="trabalho-container">
+      <div class="trabalho-video">
+        <video controls>
+          <source src="media/v5.mp4" type="video/mp4">
+          O seu navegador não suporta vídeos HTML5.
+        </video>
+      </div>
+
+      <div class="trabalho-descricao">
+        <h2>Audiovisual Synchronization</h2>
+        <p><strong>2023</strong></p>
+        <p>
+          The animation is a visual exploration of audio synchronization, developed in response to Bruno Coulais's song "Dreaming". 
+          The images and movements were created as the musical piece progressed, resulting in an organic fusion of sound and visuals. 
+          The work seeks to convey the emotions and dreamlike atmosphere of the composition, inviting the viewer into a sensory 
+          immersion and a synaesthetic experience.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener("load", () => {
+      const container = document.querySelector(".trabalho-container");
+      container.classList.add("show");
+    });
+  </script>
+
+</body>
+</html>

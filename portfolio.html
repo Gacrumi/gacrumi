@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Gabriela Miranda</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- AOS CSS e JS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    });
+  </script>
+</head>
+<body class="portfolio-page">
+
+  <!-- Menu fixo no topo -->
+  <header class="portfolio-header">
+    <a href="index.html" class="site-title">Gabriela Miranda</a>
+    <nav class="menu">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <section id="portfolio">
+
+      <!-- Vídeo interativo acima da galeria -->
+      <div class="portfolio-video" data-aos="fade-up">
+        <video controls poster="media/thumbnail.png">
+          <source src="media/showreel.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+
+      <!-- Título da seção -->
+      <h2 data-aos="fade-up">Portfolio</h2>
+
+      <!-- Galeria -->
+      <div class="gallery">
+        <figure class="gallery-item" data-aos="fade-up">
+          <a href="blooming.html">
+            <img src="media/t1.jpg" alt="Trabalho 1">
+          </a>
+          <figcaption>Blooming</figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-aos="fade-up">
+          <a href="r_e_m.html">
+            <img src="media/t2.png" alt="Trabalho 2">
+          </a>
+          <figcaption>R.E.M.</figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-aos="fade-up">
+          <a href="little_plants.html">
+            <img src="media/t3.jpg" alt="Trabalho 3">
+          </a>
+          <figcaption>Little Plants</figcaption>
+        </figure>
+        
+         <figure class="gallery-item" data-aos="fade-up">
+          <a href="audiovisual_synchronization.html">
+            <img src="media/t5.jpg" alt="Trabalho 5">
+          </a>
+          <figcaption>Audiovisual Synchronization</figcaption>
+        </figure>
+        
+        <figure class="gallery-item" data-aos="fade-up">
+          <a href="the_tea.html">
+            <img src="media/t4.png" alt="Trabalho 4">
+          </a>
+          <figcaption>The Tea</figcaption>
+        </figure>
+
+       
+
+        <figure class="gallery-item" data-aos="fade-up">
+          <a href="the_letter.html">
+            <img src="media/t6.jpg" alt="Trabalho 6">
+          </a>
+          <figcaption>The Letter</figcaption>
+        </figure>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>

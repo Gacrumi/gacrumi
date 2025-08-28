@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R.E.M. - Gabriela Miranda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="trabalho-page">
+
+  <a href="portfolio.html" class="close-btn">✖</a>
+
+  <header class="portfolio-header">
+    <a href="index.html" class="site-title">Gabriela Miranda</a>
+    <nav class="menu">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="trabalho-main">
+    <div class="trabalho-container">
+      <div class="trabalho-video">
+        <video controls poster="media/t2.png">
+          <source src="media/v2.mp4" type="video/mp4">
+          O seu navegador não suporta vídeos HTML5.
+        </video>
+      </div>
+
+      <div class="trabalho-descricao">
+        <h2>R.E.M.</h2>
+        <p><strong>2024</strong></p>
+        <p>
+          On a spring night when the world is asleep, we are invited to follow the short journey of a clown 
+          who wakes up from his sleep. During his routine, we end up being surprised by a magic show, so after 
+          getting dressed, and of course, not forgetting his nose, he decides to eat something and return to his deep sleep.
+          R.E.M. is a stop-motion short film inspired by the silent film era, which oscillates between reality and dreams, 
+          and here we are faced with a question - Did all this happen or was it just a dream of our clown?
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener("load", () => {
+      const container = document.querySelector(".trabalho-container");
+      container.classList.add("show");
+    });
+  </script>
+
+</body>
+</html>

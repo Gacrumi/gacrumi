@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Gabriela Miranda</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Fade-in animation for main content */
+    main {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Small delay for sections inside main */
+    main > div:not(.scroll-fade) {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+      animation-delay: 0.2s;
+    }
+
+    /* Sections that appear on scroll */
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .scroll-fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="contact-page">
+
+  <!-- Menu fixo no topo -->
+  <header class="portfolio-header">
+    <a href="index.html" class="site-title">Gabriela Miranda</a>
+    <nav class="menu">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="contact-main">
+
+    <!-- Caixa englobando tudo -->
+    <div class="contact-box scroll-fade">
+      <form class="contact-form" action="#" method="post">
+        <h2>Contact</h2>
+      </form>
+
+      <!-- Ícones sociais -->
+      <div class="contact-icons">
+         <a href="mailto:gacrumi@outlook.pt">
+          <img src="media/mail.png" alt="Email">
+        </a>
+
+         <a href="https://www.linkedin.com/in/gabriela-miranda-452436299/" target="_blank">
+          <img src="media/linkedin.png" alt="LinkedIn">
+        </a>
+
+        <a href="https://www.instagram.com/gacrumi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+          <img src="media/ig.png" alt="Instagram">
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Script para animação ao scroll -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const elements = document.querySelectorAll('.scroll-fade');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target); // só anima uma vez
+          }
+        });
+      }, { threshold: 0.2 });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Gabriela Miranda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+
+  <!-- Menu fixo no topo
+  <header class="portfolio-header">
+    <a href="index.html" class="site-title">Gabriela Miranda</a>
+    <nav class="menu">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+   <main class="contact-main">
+    
+    <!-- Caixa englobando tudo
+    <div class="contact-box">
+      <form class="contact-form" action="#" method="post">
+        <h2>Contact</h2>
+
+      </form>
+
+      <!-- Ícones sociais
+      <div class="contact-icons">
+        
+         <a href="mailto:gacrumi@outlook.pt">
+          <img src="media/mail.png" alt="Email">
+        </a>
+
+         <a href="https://www.linkedin.com/in/gabriela-miranda-452436299/" target="_blank">
+          <img src="media/linkedin.png" alt="LinkedIn">
+        </a>
+       
+
+        <a href="https://www.instagram.com/gacrumi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+          <img src="media/ig.png" alt="Instagram">
+        </a>
+       
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
+ -->

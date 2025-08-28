@@ -1,0 +1,655 @@
+/* =========================================================
+   RESET & ESTILOS GLOBAIS
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body, html {
+  font-family: 'montserrat', sans-serif;
+  background-color: #fffdf6; 
+  color: #fffdf6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu a,
+.site-title a,
+.site-title {
+  text-transform: uppercase; /* caps lock */
+  font-family: 'Montserrat', sans-serif; /* fonte moderna */
+  font-weight: 700; /* mais grossa */
+  letter-spacing: 2px; /* espaçamento entre letras */
+  
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(30px); /* começa deslocado para baixo */
+  transition: all 0.8s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   INÍCIO (HOME) - Vídeo de capa
+========================================================= */
+body.home-page {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden; /* evita scroll */
+}
+
+.intro {
+  position: fixed; /* fixo à viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; /* altura total da tela */
+  overflow: hidden;
+  z-index: 10;
+}
+
+.intro video.bg-video {
+  position: absolute; /* cobre toda a intro */
+  top: 0;
+  left: 0;
+  width: 100vw; /* usa 100% da viewport */
+  height: 90vh;
+  object-fit: cover; /* preenche toda a área mantendo proporção */
+}
+
+.intro .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.home-header.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.5s ease;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* muda de relative para fixed */
+  top: 0; left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.5s ease;
+  z-index: 5; /* menor que o menu para o menu ficar visível */
+}
+
+
+.home-header.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.home-header video.bg-header-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.home-header .header-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.home-header .site-title,
+.home-header .menu {
+  position: relative;
+  z-index: 2;
+}
+
+.home-header .menu a {
+  margin: 0 20px;
+  font-size: 0.8rem;
+  color: #fffdf6;
+}
+
+.home-header .menu a:hover {
+  filter: brightness(0.7);
+}
+
+/* =========================================================
+   HEADER PORTFOLIO (menu fixo)
+========================================================= */
+.portfolio-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background-color: rgba(255, 253, 246, 0.9); /* semi-transparente */
+  backdrop-filter: blur(10px);          /* aplica blur ao fundo */
+  -webkit-backdrop-filter: blur(10px);  /* compatibilidade Safari */
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.portfolio-header .site-title {
+  font-size: 1.5rem;
+  color: #494949;
+}
+
+.portfolio-header .menu a {
+  color: #494949;
+  margin-left: 20px;
+  font-size: 0.6rem !important; 
+}
+
+/* =========================================================
+   PORTFOLIO PAGE
+========================================================= */
+#portfolio h2 {
+  text-align: center;
+  font-weight: normal;
+  margin: 100px 0 10px 0;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif; /* ou outra fonte que queira usar */
+  font-weight: bold;                /* negrito */
+  text-transform: uppercase;        /* caps lock */
+  font-size: 1.5rem;                /* ajuste conforme desejado */
+  color: #494949; 
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1040px;
+  margin: 0 auto 100px auto;
+  padding: 20px;
+}
+
+.gallery-item img {
+  width: 100%;          /* ocupa toda a largura do container */
+  height: 200px;        /* altura fixa para todas as imagens */
+  object-fit: cover;    /* corta o excesso sem distorcer */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.gallery-item img:hover {
+  filter: brightness(0.7);
+}
+
+.gallery-item figcaption {
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%;
+  background: rgba(0,0,0,0.0);
+  color: #543d46;
+  padding: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.portfolio-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 120px auto 100px auto;
+  max-width: 1000px;
+}
+
+.portfolio-video video {
+  width: 100%;
+  max-height: 600px;
+  background: #fffdf6;
+}
+
+/* =========================================================
+   TRABALHOS INDIVIDUAIS
+========================================================= */
+/* =========================================================
+   TRABALHOS INDIVIDUAIS
+========================================================= */
+main.trabalho-main {
+  display: flex;
+  justify-content: center;  /* centraliza horizontalmente */
+  align-items: center;      /* centraliza verticalmente */
+  min-height: 100vh;        /* altura total da viewport */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.trabalho-container {
+  display: flex;
+  gap: 20px;               /* espaço menor entre vídeo e descrição */
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-end;    /* alinha base do texto com base do vídeo */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.trabalho-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trabalho-video video {
+  width: 100%;
+  max-width: 800px;  /* vídeo maior */
+  height: auto;
+  display: block;
+}
+
+.trabalho-descricao {
+  flex: 1;
+  color: #494949;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+  font-family: 'montserrat', sans-serif;
+}
+
+/* Botão de fechar */
+.close-btn {
+  position: fixed;
+  top: 70px;
+  right: 30px;
+  font-size: 2rem;
+  color: #494949;
+  text-decoration: none;
+  z-index: 2000;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #bbbbbb;
+}
+
+/* Header portfolio */
+.portfolio-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background-color: rgba(255, 253, 246, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.portfolio-header .site-title {
+  font-size: 1.5rem;
+  color: #494949;
+}
+
+.portfolio-header .menu a {
+  color: #494949;
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+body.about-page {
+  background-color: #fffdf6;
+  color: #494949;
+  font-family: 'montserrat', sans-serif;
+}
+
+.about-page .about-title,
+.about-page .skills-title {
+  font-family: 'Montserrat', sans-serif; /* ou outra fonte que queira usar */
+  font-weight: bold;                /* negrito */
+  text-transform: uppercase;        /* caps lock */
+  font-size: 1.5rem;                /* ajuste conforme desejado */
+  color: #494949;                   /* cor do texto */
+  margin-bottom: 20px;              /* espaçamento abaixo */
+}
+
+/* =========================================================
+   FOTO + TEXTO PRINCIPAL
+========================================================= */
+.about-container {
+  display: flex;
+  gap: 50px;
+  max-width: 800px;
+  margin: 0 auto;          /* centraliza horizontalmente a página */
+  padding: 20px;
+  align-items: center;      /* centraliza verticalmente */
+  justify-content: center;  /* centraliza horizontalmente */
+  min-height: 80vh;         /* altura mínima para centralização vertical */
+}
+
+/* Coluna esquerda: foto circular + texto */
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontalmente */
+  text-align: center;  /* centraliza o texto */
+  justify-content: center; /* centraliza verticalmente dentro da coluna */
+}
+
+
+/* Foto em círculo */
+.about-left img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* transforma em círculo */
+  object-fit: cover;
+  margin-bottom: 20px; /* espaço entre foto e texto */
+  margin-top: 50px;
+}
+
+/* Texto abaixo da foto */
+.about-left .about-text p {
+  text-align: justify;   /* justifica o texto */
+  color: #494949;          /* mantém a cor do texto */
+  line-height: 1.6;      /* espaçamento entre linhas */
+  margin-bottom: 15px;   /* espaçamento entre parágrafos */
+}
+
+
+/* Título abaixo da foto */
+.about-left .about-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;  /* caps lock */
+  color:#494949;
+  margin-top: 20px;
+  margin-bottom: 15px;              /* remove margens extras */
+}
+
+
+/* Coluna direita: título + texto principal */
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* alinha conteúdo pelo topo */
+}
+
+.about-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  
+}
+
+.about-text p {
+  line-height: 1.6;
+  text-align: justify;
+  font-family: 'montserrat', sans-serif;
+}
+
+/* Skills subtítulos - mesma fonte, caps lock, bold */
+.about-page .left-column .skill-group h3,
+.about-page .right-column .skill-group h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase; /* caps lock */
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #494949;
+}
+
+
+/* =========================================================
+   SKILLS SECTION
+========================================================= */
+
+/* Wrapper geral da seção Skills */
+.skills-title-wrapper {
+  max-width: 1200px;
+  margin: 50px auto 20px auto;
+  display: flex;
+  justify-content: flex-start; /* coloca Skills à esquerda */
+}
+
+/* Título Skills */
+.skills-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #494949;
+  text-align: right; /* Alinhamento à direita, como se fosse coluna esquerda */
+  flex: 0 0 calc(50% - 20px); /* ocupa mesma largura da coluna esquerda */
+}
+
+/* Wrapper das colunas de Skills */
+.about-columns-wrapper {
+  max-width: 1200px;
+  margin: 120px auto 200px auto;
+}
+
+.about-columns {
+  display: flex;
+  gap: 40px; /* espaçamento entre colunas */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: flex-start; /* alinha topo das colunas */
+}
+
+.column {
+  flex: 0 0 calc(50% - 20px); /* cada coluna ocupa metade do espaço menos metade do gap */
+}
+
+/* Coluna esquerda */
+.left-column {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-column .skill-group {
+  margin-bottom: 25px;
+}
+
+.left-column .skill-group h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: right;
+  font-family: 'montserrat', sans-serif;
+}
+
+.left-column .skill-group ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-family: 'montserrat', sans-serif;
+}
+
+.left-column .skill-group li {
+  margin: 3px 0;
+  font-family: 'montserrat', sans-serif;
+}
+
+/* Coluna direita */
+.right-column {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 0;
+  font-family: 'montserrat', sans-serif;
+}
+
+.right-column .skill-group {
+  margin-bottom: 25px;
+}
+
+.right-column .skill-group h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.right-column .skill-group ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.right-column .skill-group li {
+  margin: 3px 0;
+}
+
+/* Currently Exploring - garante alinhamento correto */
+.right-column .currently-exploring {
+  margin-top: 0;
+}
+
+
+/* =========================
+   CONTACT PAGE
+========================= */
+/* Contact page layout */
+.contact-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px; /* espaço por causa do header fixo */
+  background-color: #fffdf6; /* ou black, se preferires */
+}
+
+.contact-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px); /* começa um pouco abaixo */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.contact-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-form h2 {
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: #494949;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'montserrat', sans-serif;
+  text-transform: uppercase;
+  color:black
+}
+
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: 'montserrat', sans-serif;
+  text-transform: uppercase;
+  color:black
+}
+
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #494949;      /* <<< COR DO TEXTO DO PLACEHOLDER */
+}
+
+.contact-form button {
+  background-color: #494949;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: black;
+}
+
+/* Ícones sociais dentro da caixa */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-icons img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.contact-icons img:hover {
+  transform: scale(1.2);
+}
